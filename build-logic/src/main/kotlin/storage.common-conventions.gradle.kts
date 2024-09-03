@@ -13,6 +13,7 @@ val libs = extensions.getByType(org.gradle.accessors.dm.LibrariesForLibs::class)
 
 dependencies {
   api(platform(project(":storage-bom")))
+  compileOnlyApi(libs.annotations)
   checkstyle(libs.stylecheck)
 }
 
@@ -23,7 +24,7 @@ spotless {
     indentWithSpaces(2)
   }
   java {
-    importOrderFile(rootProject.file(".spotless/fenix.importorder"))
+    importOrderFile(rootProject.file(".spotless/emptyte.importorder"))
     applyCommon()
   }
   kotlinGradle {
@@ -50,7 +51,7 @@ tasks {
     manifest {
       attributes(
         "Specification-Version" to project.version,
-        "Specification-Vendor" to "fenix-team",
+        "Specification-Vendor" to "emptyte-team",
         "Implementation-Build-Date" to Date()
       )
     }
