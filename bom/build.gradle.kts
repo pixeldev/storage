@@ -16,7 +16,8 @@ dependencies {
       "codec",
       "caffeine-dist",
       "gson-dist",
-      "yaml-dist"
+      "mongo-legacy-dist",
+      "redis-dist"
     ).forEach {
       api(project(":storage-$it"))
     }

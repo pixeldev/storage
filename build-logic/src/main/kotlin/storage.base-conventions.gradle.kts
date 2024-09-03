@@ -6,17 +6,18 @@ val libs = extensions.getByType(org.gradle.accessors.dm.LibrariesForLibs::class)
 
 indra {
   javaVersions {
-    target(21)
-    minimumToolchain(21)
+    target(17)
+    minimumToolchain(17)
     strictVersions(true)
   }
   checkstyle(libs.versions.checkstyle.get())
 
-  github("emptyte-team", "storage") {
+  github("fenix-team", "storage") {
     ci(true)
   }
   mitLicense()
 
+  signWithKeyFromPrefixedProperties("fenix")
   configurePublications {
     pom {
       developers {
@@ -25,13 +26,6 @@ indra {
           name.set("Angel Miranda")
           url.set("https://github.com/pixeldev")
           email.set("pixel@fenixteam.org")
-        }
-
-        developer {
-          id.set("srvenient")
-          name.set("Nelson Rodriguez Roa")
-          url.set("https://github.com/srvenient")
-          email.set("srvenient@gmail.com")
         }
       }
     }

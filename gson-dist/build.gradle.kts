@@ -5,5 +5,5 @@ plugins {
 dependencies {
   api(project(":storage-api"))
   api(project(":storage-codec"))
-  compileOnlyApi(libs.gson)
+  compileOnlyApi("com.google.code.gson:gson:2.9.0")
 }
