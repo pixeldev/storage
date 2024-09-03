@@ -5,13 +5,14 @@ pluginManagement {
 dependencyResolutionManagement {
   repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
   repositories {
-    maven("https://repo.revengenetwork.es/repository/libs/")
+    mavenLocal()
+    mavenCentral()
   }
 }
 
 rootProject.name = "storage-parent"
 
-sequenceOf("api", "codec", "bom", "caffeine-dist", "gson-dist", "mongo-legacy-dist", "redis-dist").forEach {
+sequenceOf("api", "codec", "bom", "caffeine-dist", "gson-dist", "yaml-dist").forEach {
   include("storage-$it")
   project(":storage-$it").projectDir = file(it)
 }
